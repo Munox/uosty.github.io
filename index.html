@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- STATUS OK -->
+<!-- 版权所有Uosty(R) -->
+<html lang="zh">
+
+<head>
+    <!-- head -->
+    <meta chareset="utf-8">
+    <meta name="keywords" content="Uosty,Uosty Studio,乌斯蒂,乌斯蒂工作室">
+    <meta name="description" content="Uosty Studio官方网站">
+    <meta name="author" content="Uosty Studio Author">
+    <meta http-equiv="refresh" content="260">
+    <!-- 标签栏 -->
+    <title>首页</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon" />
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="http://jqueryvalidation.org/files/demo/site-demos.css">
+    <link rel="stylesheet" type="text/css" href="index_home.css">
+    <link rel="stylesheet" type="text/css" href="new_ui.css">
+    <link rel='stylesheet' type="text/css" href='css/bootstrap.css'>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style type="text/css">
+        * {
+            margin: 0 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!-- not javascript fond -->
+    <noscript onclick="nojs()">
+        <div
+            style="width: 3000px;;height:1500px;overflow-y: hidden;position: fixed;top:0px;background-color:#fff;z-index: 999;">
+            请允许网站启用javascript，如果您使用的是IE内核的浏览器，请使用chrome访问效果更佳<h1 style=" margin-top:30px;margin-left:10px ">网站部分内容未能正常显示
+            </h1>
+        </div>
+    </noscript>
+    <sw style="font-size: 40px;">加载不良，请刷新网页</sw>
+    <!-- 主页面 -->
+    <div id="main_div">
+        <!-- 注册VIP
+        <div class="newds"><span>公告</span></div> -->
+        <script>
+            $(function () {
+                $(".form-group input").focus(function () {
+                    console.log(1)
+                    funon()
+                });
+                $(".form-group input").blur(function () {
+                    console.log(2)
+                    funoff()
+                });
+                $(window).change(function () {
+                    var ttp = $(".navbar-collapse").css("width");
+                    var ttp = parseInt(ttp);
+                    if (ttp < 1000) {
+                        $(".form-group input").css("width", "");
+                    }
+                })
+            });
+
+            function funon() {
+                var ttp = $(".navbar-collapse").css("width");
+                var tnp = $(".form-group input").css("width");
+                var tnp = tnp.substring(0, tnp.indexOf("p") + 0);
+                var tnp = parseInt(tnp);
+                var ttp = ttp.substring(0, ttp.indexOf("p") + 0);
+                var ttp = parseInt(ttp);
+                if (ttp > 900) {
+                    var typ = tnp + 30;
+                    var ttmp = typ - 30
+                    if (ttmp != tnp) {
+                        var typ = tnp + 30;
+                    }
+                    // $(".form-group input").css("width", typ + "px");
+                    $('.form-group input').stop().animate({
+                        width: typ + 'px'
+                    }, 400)
+                } else {
+                    $(".form-group input").css("width", "");
+                }
+            }
+
+            function funoff() {
+                var ttp = $(".navbar-collapse").css("width");
+                var tnp = $(".form-group input").css("width");
+                var tnp = tnp.substring(0, tnp.indexOf("p") + 0);
+                var tnp = parseInt(tnp);
+                var ttp = ttp.substring(0, ttp.indexOf("p") + 0);
+                var ttp = parseInt(ttp);
+                if (ttp > 900) {
+                    var typ = tnp - 30;
+                    var ttmp = typ + 30
+                    if (ttmp != tnp) {
+                        var typ = tnp - 30;
+                    }
+                    // $(".form-group input").css("width", typ + "px");
+                    $('.form-group input').stop().animate({
+                        width: typ + 'px'
+                    }, 400);
+                } else {
+                    $(".form-group input").css("width", "");
+                }
+            }
+        </script>
+
+        <!-- 页眉区域 -->
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/"><img src="logo.png"></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">首页 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="/news.html">新闻</a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">小程序<span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/software.html">首页</a></li>
+                                    <li><a href="/cloud.html">云盘</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/software/001.html">质数计算机</a></li>
+                                    <li class="disabled"><a id="error-ft" href="javascript:void(0); "
+                                            title="未达到此权限级别">制作程序</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left" action="https://www.baidu.com/s" target="_blank">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" data-toggle="dropdown" name="word"
+                                            placeholder="请输入关键字" onfocus="" onblur="">
+                                        <ul class="dropdown-menu" mid="scr">
+                                            <li><a href="javascript:void(0);">Munox</a></li>
+                                            <li><a href="javascript:void(0);">云盘</a></li>
+                                            <li><a href="javascript:void(0);">质数计算机</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-default">搜索</button>
+
+                                </li>
+                            </ul>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li bp><a href="/login.html">登录</a></li>
+                            <li class="dropdown" cp>
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">登录<span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/user.html?">我的</a></li>
+                                    <li><a href="javascript:void(0)" data-toggle="modal"
+                                            data-target=".bs-example-modal-sm">退出登录</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+            
+            <!-- 警告框 -->
+            <div class="alert alert-danger" role="alert" id="ft-error">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">错误:</span>
+                您没有足够的权限 
+            </div>
+            <div id="logout-suss" class="alert alert-success" role="alert"><button type="button" class="close"
+                    data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                您已退出登录 
+            </div>
+        </div>
+
+        <div class="container" style="text-align: start;">
+            <div class="jumbotron"
+                style="height: 40em;background-image: url(/fm_soft.jpg);background-size: auto auto;background-repeat: no-repeat;color: #fff;position: relative;">
+                <h1>Munox 工作室推出小程序</h1>
+                <p style="font-size: 16px;">小程序包含许多功能，另有测试版的公共云盘，需要你来探索。</p>
+                <p style="position: absolute; bottom:3em"><a class="btn btn-primary btn-lg" href="#" role="button">Learn
+                        more</a></p>
+            </div>
+
+            <div>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#new" aria-controls="new" role="tab"
+                            data-toggle="tab">新闻</a></li>
+                    <li role="presentation"><a href="#gzhwz" aria-controls="gzhwz" role="tab"
+                            data-toggle="tab">公众号文章</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content" style="margin-bottom: 50px;">
+                    <div role="tabpanel" class="tab-pane active" id="new" style="position: relative;">
+                        <iframe src="new_moble.html" frameborder="0" scrolling="yes" mid="lad"></iframe>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="gzhwz" style="position: relative;">
+                        <iframe src="gzh_ui.html" frameborder="0" scrolling="yes" mid="lad"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="container" style="text-align: center;">
+            <div id="gotop"><span class="glyphicon glyphicon-menu-up"></span></div>
+        </div> -->
+        <!-- 功能区
+        <div class="wpper">
+            <div class="middlewp">
+                <div class="wpleft">
+                    <iframe src="new_moble.html" frameborder="0" scrolling="yes"></iframe>
+                </div>
+                <div class="wpright">
+                    <iframe src="gzh_ui.html" frameborder="0" scrolling="yes"></iframe>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- 功能块
+        <div class="see">
+            <div class="see_s">
+                <ul id="leftwp">
+                    <li>新闻</li>
+                    <li>云盘</li>
+                    <li>合作</li>
+                    <li>小程序</li>
+                </ul>
+                <div id="imgwp">
+                    <img src="home/img_f1.png">
+                    <img src="home/img_f1.png">
+                    <img src="fm_cpn.jpg">
+                    <img src="home/img_3.png">
+                </div>
+            </div>
+        </div> -->
+
+        <!-- 页脚 -->
+        <footer class="bs-docs-footer navbar-collapse">
+            <div class="container">
+                <ul class="bs-docs-footer-links">
+                    <li><a href="/">首页</a></li>
+                    <li><a href="/news.html">新闻</a></li>
+                    <li><a href="/software.html">小程序</a></li>
+                    <li><a href="/about.html">关于</a></li>
+                </ul>
+
+                <p>Copyright &copy; <a href="https://github.com/uosty" target="_blank">@uosty</a> and <a
+                        href="https://github.com/munox" target="_blank">@Munox Studio</a>.<br>
+                    Outstanding contributors to the website <a href="https://v3.bootcss.com/">@Bootstrap</a>.
+                </p>
+
+            </div>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- 废弃代码 -->
+<!--  <div class='resetcop'>
+            <div class="reset_cop" style="width: 100%;">
+                <div class="forus">
+                    <h3 id="ccs">关注我们</h3>
+                    <a style="margin-left:40px"><i id="wei" onclick="iose()" title="点击关注我" class='icon'></i><img
+                            id="forwc" class="forusg" src='forus.jpg'></a>
+                    <a style="margin-left:40px" href="https://blog.csdn.net/c_cfzxy"><i id="csd" onclick="" title="CSDN"
+                            class='icon'></i></a>
+                    <a style="margin-left:40px" href="https://www.zhihu.com/people/hao-da-wei-xing-pei-jian"><i id="zhy"
+                            onclick="" title="知乎" class='icon'></i></a>
+                    <a style="margin-left:40px" href="https://my.oschina.net/u/4528735"><i id="kzg" onclick=""
+                            title="开源中国" class='icon'></i></a>
+                    <a style="margin-left:40px" href="https://github.com/uosty"><i id="ghb" onclick="" title="github"
+                            class='icon'></i></a>
+                </div>
+                <div class="mapin">
+                    <div class="mapon">
+                        <div class="maptitle">网站地图</div>
+                        <ul>
+                            <li><a href='index.html'>首页</a></li>
+                            <li><a href='news.html'>新闻</a></li>
+                            <li><a href='cloud.html'>云盘</a></li>
+                            <li><a href='software.html'>小程序</a></li>
+                        </ul>
+                    </div>
+                    <div class="mapon">
+                        <div class="maptitle">开发人员</div>
+                        <ul>
+                            <li><a href='jh_news.html'>发布新闻</a></li>
+                            <li><a href='email.html'>制作网站</a></li>
+                            <li><a href='jh_soft.html'>制作小程序</a></li>
+                        </ul>
+                    </div>
+                    <div class="mapon">
+                        <div class="maptitle">法律信息</div>
+                        <ul>
+                            <li><a href='yhtk.html'>服务协议</a></li>
+                            <li><a href='yhtk.html'>隐私条款</a></li>
+                            <li><a href='about.html'>知识产权</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="xy"><img style="width: 200px;" src='logo.png' alt="uosty"></div>
+                <div class="copys">
+                    <p class="copyi">Copyright&nbsp;&copy;&nbsp;2019-2020&nbsp;uosty&nbsp;studio&nbsp; All Rights
+                        Reserved</p>
+                </div>
+
+                <-- Modal 
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="width: 100%;">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">信用证书</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div style="background-image: url(xy/oh.png);width: 100%;height: 100%;background-size: 100% 100%;"><img style="width: 100%;" src="xy/xy.png"></div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copys2"> <a style="float: left;font-size:14px"  data-toggle="modal" data-target="#myModal" class="" href="javascript:void(0);">企业信用</a><a class="copyi"
+                        href="https://www.12377.cn/">蒙网文【2020】1472-2564号</a></div>
+                <div class="jb"><a id="s1"></a><a id="s2"></a></div>
+            </div>
+        </div> -->
